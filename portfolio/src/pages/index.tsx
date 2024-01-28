@@ -80,7 +80,7 @@ export default function Home({ posts }: PostProps) {
 
         <div className={styles.filters}>
           <input type="text" className={styles.input} placeholder="Search post" onChange={(e) => setSearch(e.target.value)} />
-          <div style={{ flexDirection: "column" }}>
+          <div>
             <button className={styles.dateSortButton} onClick={() => setCollapse(toggle => !toggle)}><i className="fa-solid fa-filter"></i> Filters</button>
             <div style={{ display: collapse ? "flex" : "none", flexDirection: "column", marginTop: 10, gap: 10 }}>
               <button className={styles.dateSortButton} onClick={() => setCategory("Coding")}><i className="fa-solid fa-code"></i> Code</button>

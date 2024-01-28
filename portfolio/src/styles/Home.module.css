@@ -23,12 +23,12 @@
     border: 2px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    color: #555;
+    color: #0E3B50;
     outline: none;
   }
   
   .input:focus {
-    border-color: #B0A695;
+    border-color: #0E3B50;
   }
 
   
@@ -39,14 +39,13 @@
     padding: 5px;
     border: transparent;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-    background: #B0A695;
+    background: #0E3B50;
     color: white;
     border-radius: 4px;
   }
 
   .dateSortButton:hover{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(176,166,149,1) 0%, rgba(119,107,93,1) 100%);
+    background: rgb(14, 59, 80);
   }
 
   .dateSortButton:active{
@@ -59,7 +58,7 @@
     transition: all .2s;
     padding: 10px 7px;
     border-radius: 10px;
-    background: #B0A695;
+    background: #0E3B50;
     border: none;
     display: flex;
     align-items: center;
@@ -71,7 +70,7 @@
   }
   
   .ReadMoreBlogsButton:hover {
-    background: #B0A695;
+    background: #0E3B50;
   }
   
   .ReadMoreBlogsButton:active {
@@ -125,7 +124,7 @@
     margin: 1rem;
     padding: 5px 10px 5px 10px;
     border-radius: 20px;
-    background: #B0A695;
+    background: #0E3B50;
     width: 35%;
   }
 
@@ -160,14 +159,13 @@
     padding: 5px;
     border: transparent;
     box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-    background: #B0A695;
+    background: #0E3B50;
     color: white;
     border-radius: 4px;
   }
 
   .readMoreButton:hover{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(176,166,149,1) 0%, rgba(119,107,93,1) 100%);
+    background: rgb(14, 59, 80);
   }
 
   .readMoreButton:active{
