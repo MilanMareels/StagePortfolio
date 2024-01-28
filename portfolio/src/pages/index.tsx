@@ -48,6 +48,7 @@ export default function Home({ posts }: PostProps) {
   const [search, setSearch] = useState<string>("");
   const [category, setCategory] = useState<string>("")
   const [collapse, setCollapse] = useState<boolean>(false);
+  const [displayedBlogs, setDisplayedBlogs] = useState<number>(4);
 
 
   let filterPosts = posts.filter((x) => {
@@ -57,12 +58,16 @@ export default function Home({ posts }: PostProps) {
       return x.category === category;
     }
     return x.title.toLocaleLowerCase().includes(search.toLocaleLowerCase());
-  }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, displayedBlogs);
 
   const handleReset = () => {
     setCategory("");
     setCollapse(false);
   }
+
+  const loadMoreBlogs = () => {
+    setDisplayedBlogs(prevCount => prevCount + 4); // verhoog de count in de splice met 4 kan ook 2....
+  };
 
   return (
     <>
@@ -105,7 +110,7 @@ export default function Home({ posts }: PostProps) {
           ))}
         </section>
 
-        <button className={styles.ReadMoreBlogsButton}>
+        <button className={styles.ReadMoreBlogsButton} onClick={loadMoreBlogs}>
           <span>More blogs</span>
           <i className="fa-solid fa-arrow-down fa-bounce"></i>
         </button>

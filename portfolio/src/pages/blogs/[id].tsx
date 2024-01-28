@@ -5,6 +5,10 @@ import { Post, RootObjectBlogItem, RootObjectBlogs } from "@/types";
 import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
+import { Marked } from 'marked';
+
+
+const marked = new Marked();
 
 
 interface Paths extends ParsedUrlQuery {
@@ -82,8 +86,7 @@ const BlogDetail = ({ post }: PostProps) => {
                         <section className={styles.left}>
                             <img src={post.img} className={styles.blogImg} />
                         </section>
-                        <section className={styles.right}>
-                            {post.text}
+                        <section className={styles.right} dangerouslySetInnerHTML={{ __html: marked.parse(post.text) }}>
                         </section>
                     </section>
                 </section>
