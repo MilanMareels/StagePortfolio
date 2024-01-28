@@ -3,7 +3,6 @@ import Footer from "../components/Footer";
 import styles from "@/styles/BlogDetailPage.module.css"
 import { Post, RootObjectBlogItem, RootObjectBlogs } from "@/types";
 import Head from "next/head";
-import blogs from "../../../data/blogs.json";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { ParsedUrlQuery } from "querystring";
 

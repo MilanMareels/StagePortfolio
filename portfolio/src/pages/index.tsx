@@ -4,7 +4,6 @@ import Link from "next/link";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import blogs from "../../data/blogs.json";
 import { GetStaticProps } from "next";
 import { Post, RootObjectBlogs } from "@/types";
 import { useState } from "react";
