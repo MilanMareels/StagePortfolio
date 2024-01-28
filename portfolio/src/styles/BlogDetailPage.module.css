@@ -1,0 +1,70 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem;
+}
+    
+.blogperson{
+    padding: 20px;
+    font-size: 20pt;
+    text-align: center;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    width: 70%;
+}
+
+.blog{
+   background-color: transparent;
+   padding: 40px;
+   margin-top: 20px;
+   width: 70%;
+}
+
+.TitleSection{
+    margin: 0 0 0.5rem 0;
+}
+
+
+.blogImg{
+  width: 100%;
+  padding: 1rem 0 0 0;
+}
+
+.blogImgTextSection{
+    display: flex;
+    flex-direction: column;
+}
+
+/* .left{
+   width: 40%;
+}
+
+.right{
+    width: 60%;
+} */
+
+.blogText{
+   padding: 0 0 0 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .blogImgTextSection{
+        display: flex;
+        flex-direction: column;
+    }
+    /* .left, .right{
+        width: 100%;
+    } */
+    .main{
+        height: 100%;
+        margin: 2.5rem;
+    }
+    .blogperson{
+        width: 100%;
+    }
+    .blog{
+       width: 100%;
+    }
+  }
