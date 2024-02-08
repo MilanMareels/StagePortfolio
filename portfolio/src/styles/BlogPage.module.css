@@ -1,0 +1,42 @@
+/* Filters */
+
+.filters{
+    display: flex;
+    gap: 10px;
+  }
+
+  .input {
+    width: 200px;
+    height: auto;
+    padding: 14px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #0E3B50;
+    outline: none;
+  }
+  
+  .input:focus {
+    border-color: #0E3B50;
+  }
+
+  
+  .dateSortButton{
+    width: 70px;
+    height: 100%;
+    font-size: 10pt;
+    padding: 5px;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    background: #0E3B50;
+    color: white;
+    border-radius: 4px;
+  }
+
+  .dateSortButton:hover{
+    background: rgb(14, 59, 80);
+  }
+
+  .dateSortButton:active{
+    transform: translate(0em, 0.2em);
+  }
