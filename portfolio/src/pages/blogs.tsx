@@ -70,13 +70,13 @@ const BlogsPage = ({ posts }: PostProps) => {
                 <div className={styles.filters}>
                     <input type="text" className={styles.input} placeholder="Search post" onChange={(e) => setSearch(e.target.value)} />
                     <div>
-                        <button className={styles.dateSortButton} onClick={() => setCollapse(toggle => !toggle)}><i className="fa-solid fa-filter"></i> Filters</button>
-                        <div style={{ display: collapse ? "flex" : "none", flexDirection: "column", marginTop: 10, gap: 10 }}>
-                            <button className={styles.dateSortButton} onClick={() => setCategory("Coding")}><i className="fa-solid fa-code"></i> Code</button>
-                            <button className={styles.dateSortButton} onClick={() => setCategory("Meeting")}><i className="fa-solid fa-handshake"></i> Meeting</button>
+                        <button className={styles.filterbutton} onClick={() => setCollapse(toggle => !toggle)}><i className="fa-solid fa-filter"></i> Filters</button>
+                        <div style={{ display: collapse ? "flex" : "none", flexDirection: "column" }}>
+                            <button className={styles.filterbutton} onClick={() => setCategory("Coding")}><i className="fa-solid fa-code"></i> Code</button>
+                            <button className={styles.filterbutton} onClick={() => setCategory("Meeting")}><i className="fa-solid fa-handshake"></i> Meeting</button>
                         </div>
                     </div>
-                    <button className={styles.dateSortButton} onClick={() => handleReset()}><i className="fa-solid fa-filter-circle-xmark"></i> Reset</button>
+                    <button className={styles.filterbutton} onClick={() => handleReset()}><i className="fa-solid fa-filter-circle-xmark"></i> Reset</button>
                 </div>
 
                 <section className={styles.blogSectionMain}>
