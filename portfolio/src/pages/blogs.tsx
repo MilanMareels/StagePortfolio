@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import styles from "@/styles/blogPage.module.css";
 import { Post, RootObjectBlogs } from "@/types";
 import { GetStaticProps } from "next";
+import Link from "next/link";
 
 
 
@@ -64,7 +65,7 @@ const BlogsPage = ({ posts }: PostProps) => {
     return (
         <>
             <Nav />
-            <main>
+            <main className={styles.main}>
 
                 <div className={styles.filters}>
                     <input type="text" className={styles.input} placeholder="Search post" onChange={(e) => setSearch(e.target.value)} />
@@ -72,13 +73,31 @@ const BlogsPage = ({ posts }: PostProps) => {
                         <button className={styles.dateSortButton} onClick={() => setCollapse(toggle => !toggle)}><i className="fa-solid fa-filter"></i> Filters</button>
                         <div style={{ display: collapse ? "flex" : "none", flexDirection: "column", marginTop: 10, gap: 10 }}>
                             <button className={styles.dateSortButton} onClick={() => setCategory("Coding")}><i className="fa-solid fa-code"></i> Code</button>
-                            <button className={styles.dateSortButton} onClick={() => setCategory("Meeting")}><i className="fa-solid fa-handshake"></i>Meeting</button>
+                            <button className={styles.dateSortButton} onClick={() => setCategory("Meeting")}><i className="fa-solid fa-handshake"></i> Meeting</button>
                         </div>
                     </div>
                     <button className={styles.dateSortButton} onClick={() => handleReset()}><i className="fa-solid fa-filter-circle-xmark"></i> Reset</button>
                 </div>
 
-                {filterPosts.map((x) => <p key={x.id}>{x.text}</p>)}
+                <section className={styles.blogSectionMain}>
+                    {filterPosts.map((post) => (
+                        <section className={styles.blogSection} key={post.id}>
+                            <section className={styles.imgSection}>
+                                <img src={post.img} alt="foto" className={styles.imgBlog} />
+                            </section>
+                            <span className={styles.category}>{post.category}</span>
+                            <section className={styles.textSection}>
+                                <h1>{post.title}</h1>
+                                <p>{post.description}</p>
+                            </section>
+                            <section className={styles.nameTimeSection}>
+                                <h5 className={styles.author}>{post.author}</h5>
+                                <span className={styles.time}>{post.date}</span>
+                                <Link href={{ pathname: `blogs/${post.id}`, query: { id: post.id } }} key={post.id} className={styles.readMoreLink}><button className={styles.readMoreButton}>Read More</button></Link>
+                            </section>
+                        </section>
+                    ))}
+                </section>
 
             </main>
             <Footer />

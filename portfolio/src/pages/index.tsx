@@ -78,18 +78,6 @@ export default function Home({ posts }: PostProps) {
       </Head>
       <main className={styles.main}>
 
-        <div className={styles.filters}>
-          <input type="text" className={styles.input} placeholder="Search post" onChange={(e) => setSearch(e.target.value)} />
-          <div>
-            <button className={styles.dateSortButton} onClick={() => setCollapse(toggle => !toggle)}><i className="fa-solid fa-filter"></i> Filters</button>
-            <div style={{ display: collapse ? "flex" : "none", flexDirection: "column", marginTop: 10, gap: 10 }}>
-              <button className={styles.dateSortButton} onClick={() => setCategory("Coding")}><i className="fa-solid fa-code"></i> Code</button>
-              <button className={styles.dateSortButton} onClick={() => setCategory("Meeting")}><i className="fa-solid fa-handshake"></i>Meeting</button>
-            </div>
-          </div>
-          <button className={styles.dateSortButton} onClick={() => handleReset()}><i className="fa-solid fa-filter-circle-xmark"></i> Reset</button>
-        </div>
-
         <section className={styles.blogSectionMain}>
           {filterPosts.map((post) => (
             <section className={styles.blogSection} key={post.id}>
@@ -109,11 +97,12 @@ export default function Home({ posts }: PostProps) {
             </section>
           ))}
         </section>
-
-        <button className={styles.ReadMoreBlogsButton} onClick={loadMoreBlogs}>
-          <span>More blogs</span>
-          <i className="fa-solid fa-arrow-down fa-bounce"></i>
-        </button>
+        <Link href={`/blogs`}>
+          <button className={styles.ReadMoreBlogsButton} onClick={loadMoreBlogs}>
+            <span>More blogs</span>
+            <i className="fa-solid fa-arrow-down fa-bounce"></i>
+          </button>
+        </Link>
 
       </main >
       <Footer />
