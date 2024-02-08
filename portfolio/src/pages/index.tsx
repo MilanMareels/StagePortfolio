@@ -45,29 +45,7 @@ export const getStaticProps: GetStaticProps<PostProps> = async () => {
 
 
 export default function Home({ posts }: PostProps) {
-  const [search, setSearch] = useState<string>("");
-  const [category, setCategory] = useState<string>("")
-  const [collapse, setCollapse] = useState<boolean>(false);
-  const [displayedBlogs, setDisplayedBlogs] = useState<number>(4);
-
-
-  let filterPosts = posts.filter((x) => {
-    if (category == "Coding") {
-      return x.category === category;
-    } else if (category == "Meeting") {
-      return x.category === category;
-    }
-    return x.title.toLocaleLowerCase().includes(search.toLocaleLowerCase());
-  }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, displayedBlogs);
-
-  const handleReset = () => {
-    setCategory("");
-    setCollapse(false);
-  }
-
-  const loadMoreBlogs = () => {
-    setDisplayedBlogs(prevCount => prevCount + 4); // verhoog de count in de splice met 4 kan ook 2....
-  };
+  let filterPosts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 4);
 
   return (
     <>
@@ -97,8 +75,8 @@ export default function Home({ posts }: PostProps) {
             </section>
           ))}
         </section>
-        <Link href={`/blogs`}>
-          <button className={styles.ReadMoreBlogsButton} onClick={loadMoreBlogs}>
+        <Link href={`/blogsPage`}>
+          <button className={styles.ReadMoreBlogsButton}>
             <span>More blogs</span>
             <i className="fa-solid fa-arrow-down fa-bounce"></i>
           </button>

@@ -5,7 +5,7 @@ import styles from "@/styles/blogPage.module.css";
 import { Post, RootObjectBlogs } from "@/types";
 import { GetStaticProps } from "next";
 import Link from "next/link";
-
+import Head from "next/head";
 
 
 interface PostProps {
@@ -62,9 +62,37 @@ const BlogsPage = ({ posts }: PostProps) => {
         setCollapse(false);
     }
 
+    if (filterPosts.length === 0) {
+        return (
+            <>
+                <Nav />
+                <main style={{ height: "100vh", margin: "1rem" }}>
+                    <div className={styles.filters}>
+                        <input type="text" className={styles.input} placeholder="Search post" onChange={(e) => setSearch(e.target.value)} />
+                        <div>
+                            <button className={styles.filterbutton} onClick={() => setCollapse(toggle => !toggle)}><i className="fa-solid fa-filter"></i> Filters</button>
+                            <div style={{ display: collapse ? "flex" : "none", flexDirection: "column" }}>
+                                <button className={styles.filterbutton} onClick={() => setCategory("Coding")}>Code</button>
+                                <button className={styles.filterbutton} onClick={() => setCategory("Meeting")}>Meeting</button>
+                            </div>
+                        </div>
+                        <button className={styles.filterbutton} onClick={() => handleReset()}><i className="fa-solid fa-filter-circle-xmark"></i> Reset</button>
+                    </div>
+
+                    <h1 style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>No Posts yet</h1>
+                </main>
+                <Footer />
+            </>
+        )
+    }
+
     return (
         <>
             <Nav />
+            <Head>
+                <title>Blog Page</title>
+            </Head>
+
             <main className={styles.main}>
 
                 <div className={styles.filters}>
@@ -72,8 +100,8 @@ const BlogsPage = ({ posts }: PostProps) => {
                     <div>
                         <button className={styles.filterbutton} onClick={() => setCollapse(toggle => !toggle)}><i className="fa-solid fa-filter"></i> Filters</button>
                         <div style={{ display: collapse ? "flex" : "none", flexDirection: "column" }}>
-                            <button className={styles.filterbutton} onClick={() => setCategory("Coding")}><i className="fa-solid fa-code"></i> Code</button>
-                            <button className={styles.filterbutton} onClick={() => setCategory("Meeting")}><i className="fa-solid fa-handshake"></i> Meeting</button>
+                            <button className={styles.filterbutton} onClick={() => setCategory("Coding")}>Code</button>
+                            <button className={styles.filterbutton} onClick={() => setCategory("Meeting")}>Meeting</button>
                         </div>
                     </div>
                     <button className={styles.filterbutton} onClick={() => handleReset()}><i className="fa-solid fa-filter-circle-xmark"></i> Reset</button>
