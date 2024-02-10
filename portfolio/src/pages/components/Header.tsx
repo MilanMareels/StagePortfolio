@@ -6,11 +6,12 @@ const Header = () => {
         <>
             <header className={styles.header}>
                 <section className={styles.textSection}>
-                    <p>Welkom op mijn blogwebsite! Hier deel ik mijn dagelijkse ervaringen en inzichten tijdens mijn stage. Als stagiair ben ik constant bezig met het verkennen van nieuwe taken, het opdoen van kennis en het uitbreiden van mijn vaardigheden. Deze blogs bieden een kijkje achter de schermen van mijn stage-avontuur, waarbij ik mijn uitdagingen, successen en leermomenten deel. Of het nu gaat om het assisteren van collega's, het bijwonen van vergaderingen of het werken aan projecten, ik neem je graag mee op mijn reis. Dus stap binnen, lees mee en laat je inspireren door mijn stage-avonturen!</p>
+                    <p>Welkom op mijn blog! Hier krijg je een exclusief kijkje achter de schermen van mijn stage-avontuur. Als stagiair ben ik voortdurend bezig met het verkennen van nieuwe taken, het vergaren van kennis en het uitbreiden van mijn vaardigheden. Op deze blog deel ik graag de uitdagingen, successen en leermomenten die ik tegenkom, of het nu gaat om het ondersteunen van collega's, het bijwonen van vergaderingen of het werken aan projecten.
+                        <br />
+                        <br />
+                        Ik nodig je van harte uit op mijn reis. Dus neem een kijkje, lees mee en laat je inspireren door mijn stage-avonturen!</p>
                     <p>
-                        Tijdens mijn stage bij B.ignited werk ik aan een boeiend project waarbij ik een tweedehands website moet ontwikkelen. Als onderdeel van dit project ben ik betrokken bij alle aspecten van het ontwikkelingsproces, van concept tot implementatie.
-
-                        Mijn verantwoordelijkheden omvatten het ontwerpen en bouwen van een gebruiksvriendelijke en aantrekkelijke website waar cronos gebruikers tweedehands producten kunnen kopen en verkopen. Ik werk samen met mijn collega's om de functionaliteiten van de website te definiëren en te implementeren, zoals het zoeken en filteren van producten op categorieën, prijs en locatie, het toevoegen en beheren van producten, en het faciliteren van communicatie tussen gebruikers.</p>
+                        Tijdens mijn stage bij B.ignited werk ik aan een interessant project voor de ontwikkeling van een tweedehands website. Ik ben betrokken bij alle fasen van het ontwikkelingsproces, van concept tot implementatie. Mijn taken omvatten het ontwerpen en bouwen van een gebruiksvriendelijke en aantrekkelijke website waar gebruikers van Cronos tweedehands producten kunnen kopen en verkopen. Het definiëren en implementeren van de functionaliteiten van de website gebeurt in samenwerking met mijn collega's. Deze functionaliteiten omvatten onder andere het zoeken en filteren van producten op categorieën, prijs en locatie, het toevoegen en beheren van producten en het vergemakkelijken van communicatie tussen gebruikers..</p>
                 </section>
             </header>
         </>
