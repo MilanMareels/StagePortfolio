@@ -49,7 +49,7 @@ const BlogsPage = ({ posts }: PostProps) => {
     const [collapse, setCollapse] = useState<boolean>(false);
 
     let filterPosts = posts.filter((x) => {
-        if (category == "Coding") {
+        if (category == "Learning") {
             return x.category === category;
         } else if (category == "Meeting") {
             return x.category === category;
@@ -72,7 +72,7 @@ const BlogsPage = ({ posts }: PostProps) => {
                         <div>
                             <button className={styles.filterbutton} onClick={() => setCollapse(toggle => !toggle)}><i className="fa-solid fa-filter"></i> Filters</button>
                             <div style={{ display: collapse ? "flex" : "none", flexDirection: "column" }}>
-                                <button className={styles.filterbutton} onClick={() => setCategory("Coding")}>Code</button>
+                                <button className={styles.filterbutton} onClick={() => setCategory("Learning")}>Learning</button>
                                 <button className={styles.filterbutton} onClick={() => setCategory("Meeting")}>Meeting</button>
                             </div>
                         </div>
@@ -100,7 +100,7 @@ const BlogsPage = ({ posts }: PostProps) => {
                     <div>
                         <button className={styles.filterbutton} onClick={() => setCollapse(toggle => !toggle)}><i className="fa-solid fa-filter"></i> Filters</button>
                         <div style={{ display: collapse ? "flex" : "none", flexDirection: "column" }}>
-                            <button className={styles.filterbutton} onClick={() => setCategory("Coding")}>Code</button>
+                            <button className={styles.filterbutton} onClick={() => setCategory("Learning")}>Learning</button>
                             <button className={styles.filterbutton} onClick={() => setCategory("Meeting")}>Meeting</button>
                         </div>
                     </div>
