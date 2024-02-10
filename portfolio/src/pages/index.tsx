@@ -45,29 +45,7 @@ export const getStaticProps: GetStaticProps<PostProps> = async () => {
 
 
 export default function Home({ posts }: PostProps) {
-  const [search, setSearch] = useState<string>("");
-  const [category, setCategory] = useState<string>("")
-  const [collapse, setCollapse] = useState<boolean>(false);
-  const [displayedBlogs, setDisplayedBlogs] = useState<number>(4);
-
-
-  let filterPosts = posts.filter((x) => {
-    if (category == "Coding") {
-      return x.category === category;
-    } else if (category == "Meeting") {
-      return x.category === category;
-    }
-    return x.title.toLocaleLowerCase().includes(search.toLocaleLowerCase());
-  }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, displayedBlogs);
-
-  const handleReset = () => {
-    setCategory("");
-    setCollapse(false);
-  }
-
-  const loadMoreBlogs = () => {
-    setDisplayedBlogs(prevCount => prevCount + 4); // verhoog de count in de splice met 4 kan ook 2....
-  };
+  let filterPosts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 4);
 
   return (
     <>
@@ -77,18 +55,6 @@ export default function Home({ posts }: PostProps) {
         <title>Home</title>
       </Head>
       <main className={styles.main}>
-
-        <div className={styles.filters}>
-          <input type="text" className={styles.input} placeholder="Search post" onChange={(e) => setSearch(e.target.value)} />
-          <div>
-            <button className={styles.dateSortButton} onClick={() => setCollapse(toggle => !toggle)}><i className="fa-solid fa-filter"></i> Filters</button>
-            <div style={{ display: collapse ? "flex" : "none", flexDirection: "column", marginTop: 10, gap: 10 }}>
-              <button className={styles.dateSortButton} onClick={() => setCategory("Coding")}><i className="fa-solid fa-code"></i> Code</button>
-              <button className={styles.dateSortButton} onClick={() => setCategory("Meeting")}><i className="fa-solid fa-handshake"></i>Meeting</button>
-            </div>
-          </div>
-          <button className={styles.dateSortButton} onClick={() => handleReset()}><i className="fa-solid fa-filter-circle-xmark"></i> Reset</button>
-        </div>
 
         <section className={styles.blogSectionMain}>
           {filterPosts.map((post) => (
@@ -109,11 +75,12 @@ export default function Home({ posts }: PostProps) {
             </section>
           ))}
         </section>
-
-        <button className={styles.ReadMoreBlogsButton} onClick={loadMoreBlogs}>
-          <span>More blogs</span>
-          <i className="fa-solid fa-arrow-down fa-bounce"></i>
-        </button>
+        <Link href={`/blogsPage`}>
+          <button className={styles.ReadMoreBlogsButton}>
+            <span>More blogs</span>
+            <i className="fa-solid fa-arrow-down fa-bounce"></i>
+          </button>
+        </Link>
 
       </main >
       <Footer />

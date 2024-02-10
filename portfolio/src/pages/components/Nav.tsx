@@ -8,7 +8,7 @@ const Nav = () => {
                 <h1><Link href="/" className={styles.logo}>Milan Mareels</Link></h1>
                 <ul className={styles.ul}>
                     <li className={styles.li}><Link className={styles.a} href="/">Home</Link></li>
-                    <li className={styles.li}><Link className={styles.a} href="/blogs">Blogs</Link></li>
+                    <li className={styles.li}><Link className={styles.a} href="/blogsPage">Blogs</Link></li>
                     <li className={styles.li}><Link className={styles.a} href="/about">About</Link></li>
                 </ul>
             </nav>
