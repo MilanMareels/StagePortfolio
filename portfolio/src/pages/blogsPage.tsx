@@ -76,7 +76,7 @@ const BlogsPage = ({ posts }: PostProps) => {
                                 <button className={styles.filterbutton} onClick={() => setCategory("Meeting")}>Meeting</button>
                             </div>
                         </div>
-                        <button className={styles.filterbutton} onClick={() => handleReset()}><i className="fa-solid fa-filter-circle-xmark"></i> Reset</button>
+                        <button className={styles.filterbutton} onClick={() => handleReset()}>Reset</button>
                     </div>
 
                     <h1 style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>No Posts yet</h1>
@@ -104,7 +104,7 @@ const BlogsPage = ({ posts }: PostProps) => {
                             <button className={styles.filterbutton} onClick={() => setCategory("Meeting")}>Meeting</button>
                         </div>
                     </div>
-                    <button className={styles.filterbutton} onClick={() => handleReset()}><i className="fa-solid fa-filter-circle-xmark"></i> Reset</button>
+                    <button className={styles.filterbutton} onClick={() => handleReset()}>Reset</button>
                 </div>
 
                 <section className={styles.blogSectionMain}>
