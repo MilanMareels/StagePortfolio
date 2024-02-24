@@ -54,6 +54,9 @@ const BlogsPage = ({ posts }: PostProps) => {
         } else if (category == "Meeting") {
             return x.category === category;
         }
+        else if (category === "Coding") {
+            return x.category === category;
+        }
         return x.title.toLocaleLowerCase().includes(search.toLocaleLowerCase());
     }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
@@ -74,6 +77,7 @@ const BlogsPage = ({ posts }: PostProps) => {
                             <div style={{ display: collapse ? "flex" : "none", flexDirection: "column" }}>
                                 <button className={styles.filterbutton} onClick={() => setCategory("Learning")}>Learning</button>
                                 <button className={styles.filterbutton} onClick={() => setCategory("Meeting")}>Meeting</button>
+                                <button className={styles.filterbutton} onClick={() => setCategory("Coding")}>Coding</button>
                             </div>
                         </div>
                         <button className={styles.filterbutton} onClick={() => handleReset()}>Reset</button>
@@ -102,6 +106,7 @@ const BlogsPage = ({ posts }: PostProps) => {
                         <div style={{ display: collapse ? "flex" : "none", flexDirection: "column" }}>
                             <button className={styles.filterbutton} onClick={() => setCategory("Learning")}>Learning</button>
                             <button className={styles.filterbutton} onClick={() => setCategory("Meeting")}>Meeting</button>
+                            <button className={styles.filterbutton} onClick={() => setCategory("Coding")}>Coding</button>
                         </div>
                     </div>
                     <button className={styles.filterbutton} onClick={() => handleReset()}>Reset</button>
